@@ -109,6 +109,31 @@
   .copybtn:hover{background:var(--ember)}
   .copybtn.copied{background:#3f7a3a}
 
+
+  /* gallery */
+  .gallery{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:30px}
+  @media(max-width:640px){.gallery{grid-template-columns:1fr}}
+  .gallery figure{
+    background:var(--panel);border:1px solid var(--line);border-radius:8px;overflow:hidden;
+  }
+  .gallery img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover}
+  .gallery figcaption{padding:10px 14px;font-size:14px;color:var(--muted)}
+  .gallery .soon{
+    aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;
+    color:var(--muted);font-style:italic;font-size:15px;background:#0f0b08;
+    border:1px dashed var(--line);
+  }
+
+  /* socials */
+  .socials{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
+  .social{
+    flex:1;min-width:200px;background:var(--panel);border:1px solid var(--line);
+    border-radius:8px;padding:20px;text-decoration:none;transition:border-color .15s;
+  }
+  .social:hover{border-color:var(--ember)}
+  .social h3{font-size:16px;color:var(--gold);margin-bottom:6px}
+  .social p{color:var(--muted);font-size:15px}
+
   /* rules */
   ul.rules{list-style:none;margin-top:26px}
   ul.rules li{
@@ -140,10 +165,10 @@
 
 <header class="hero">
   <div class="ember-dots" id="embers"></div>
-  <div class="sigil">A survival world with an ending</div>
+  <div class="sigil">A survival server with an end date</div>
   <h1>EMBERSTEAD</h1>
   <div class="season">Season One</div>
-  <p class="lede">Vanilla-faithful survival, played the way it's meant to be - one shared world, one season, and a finish line.</p>
+  <p class="lede">Emberstead is a vanilla survival server that runs for one season and then shuts down. Thirty days, one shared world, no resets.</p>
   <div class="opens">
     <div class="label">Server opens</div>
     <div class="when">Friday, September 25 &middot; 6:00 PM PT</div>
@@ -154,24 +179,24 @@
 <section id="about">
   <div class="wrap">
     <div class="kicker">The Server</div>
-    <h2>One world. One season. Then it's gone.</h2>
-    <p class="muted">Emberstead is a survival multiplayer world that runs for a single season. No resets dragging on forever, no world that outlives its own story - we open the gates, we play, and when the season ends the torches go out for good.</p>
+    <h2>What is Emberstead?</h2>
+    <p class="muted">Most survival servers either reset every few months or run the same world forever. Emberstead does neither. The world opens September 25, runs for one season, and closes for good on October 25. When it's over, it's over.</p>
     <div class="cols">
       <div class="card">
-        <h3>Vanilla-faithful</h3>
-        <p>Survival the way you already know it. No teleports, no kits, no land claims, no pay-to-win anything. What you build is yours because you built it.</p>
+        <h3>Mostly vanilla</h3>
+        <p>No teleports, no kits, no land claims, no shops. Keep inventory is off, so dying costs you whatever you were carrying.</p>
       </div>
       <div class="card">
-        <h3>Java &amp; Bedrock crossplay</h3>
-        <p>One world for everyone. Join from Java Edition or Bedrock - PC, console, or mobile - and play on the same map.</p>
+        <h3>Java and Bedrock, same world</h3>
+        <p>Java Edition and Bedrock players share one world, so PC, console, and mobile can all play together.</p>
       </div>
       <div class="card">
         <h3>A village to start from</h3>
-        <p>Spawn is a medieval village grown into the hills. Take a breath, grab your bearings by the gate, then head out and stake your claim on the map.</p>
+        <p>Spawn is a small medieval village built into the hills. There's a market square and a few houses to start from before you head out on your own.</p>
       </div>
       <div class="card">
         <h3>Room to roam</h3>
-        <p>A 10,000-block world border keeps everyone close enough to matter - neighbors, trade, rivalries, and the occasional raid.</p>
+        <p>The world border sits at 10,000 blocks. Big enough to spread out, small enough that you'll actually run into people.</p>
       </div>
     </div>
   </div>
@@ -181,7 +206,7 @@
   <div class="wrap">
     <div class="kicker">Season One</div>
     <h2>How the season runs</h2>
-    <p class="muted">Thirty days, start to finish. Weekly events keep the world moving, and it all ends with a tournament weekend.</p>
+    <p class="muted">The season runs thirty days. There's something on most weekends, and it ends with a tournament.</p>
     <div class="timeline">
       <div class="ev">
         <div class="when">FRI SEP 25 - GATES OPEN</div>
@@ -189,20 +214,52 @@
       </div>
       <div class="ev">
         <div class="when">SATURDAYS - MARKET NIGHTS</div>
-        <p>The village market square comes alive. Bring your diamonds, open a stall, make a deal.</p>
+        <p>Every Saturday at the market square in the spawn village. Open a stall, sell your extras, haggle.</p>
       </div>
       <div class="ev">
         <div class="when">SUNDAYS - ARENA NIGHTS</div>
-        <p>Duels and brawls at the lakeside arena. Bring your best kit - and your nerve.</p>
+        <p>Duels at the lakeside arena every Sunday. Sign-up board is by the gate.</p>
       </div>
       <div class="ev">
         <div class="when">OCT 23-24 - THE FINALE</div>
-        <p>A tournament weekend to close out the season and crown its champions.</p>
+        <p>Two days of tournament brackets to end the season. Details get posted the week before.</p>
       </div>
       <div class="ev">
         <div class="when">SUN OCT 25 - THE TORCHES GO OUT</div>
-        <p>Season One ends at 11:59 PM PT. The world closes, and Emberstead goes dark.</p>
+        <p>The server shuts down at 11:59 PM PT. The world doesn't come back.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="gallery">
+  <div class="wrap">
+    <div class="kicker">Gallery</div>
+    <h2>From the world</h2>
+    <p class="muted">A few shots of the spawn village to start. Season screenshots get posted here as it runs - check back after event nights.</p>
+    <div class="gallery">
+      <!-- GALLERY: append new <figure> items here, newest first -->
+      <figure>
+        <img src="gallery/keep-facade.jpg" alt="The keep above the spawn village gate" loading="lazy">
+        <figcaption>The keep, from the gate courtyard</figcaption>
+      </figure>
+      <figure>
+        <img src="gallery/market-lane.jpg" alt="Aerial view of the market lane in the spawn village" loading="lazy">
+        <figcaption>Market lane from above</figcaption>
+      </figure>
+      <figure>
+        <img src="gallery/garden-path.jpg" alt="Garden path winding up through the village" loading="lazy">
+        <figcaption>The garden path up the hill</figcaption>
+      </figure>
+      <figure>
+        <img src="gallery/gatefront.jpg" alt="Top-down view of the village gatefront" loading="lazy">
+        <figcaption>Gatefront, top down</figcaption>
+      </figure>
+      <figure>
+        <img src="gallery/hilltop-tower.jpg" alt="Watchtower on the hill above the village" loading="lazy">
+        <figcaption>Watchtower on the hill</figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -239,6 +296,25 @@
       <button class="copybtn" data-copy="bedrock.emberstead.cloud-ip.cc">COPY</button>
     </div>
     <p class="muted" style="margin-top:14px;font-size:15px">Bedrock players: use the address above with port <strong>30246</strong>.</p>
+  </div>
+</section>
+
+
+<section id="community">
+  <div class="wrap">
+    <div class="kicker">Community</div>
+    <h2>Follow the season</h2>
+    <p class="muted">Event announcements, results, and the best moments from the world.</p>
+    <div class="socials">
+      <div class="social">
+        <h3>Discord</h3>
+        <p>Event calls, voice chat, and tournament brackets. The invite link goes up here when the server opens.</p>
+      </div>
+      <div class="social">
+        <h3>Clips &amp; screenshots</h3>
+        <p>The best plays and builds from each week get posted in the gallery above after every event night.</p>
+      </div>
+    </div>
   </div>
 </section>
 
